@@ -33,7 +33,7 @@
             <artifactId>resile-bundle</artifactId>
             <version>${plummb.version}</version>
 
-            <!-- These 2 properties can be removed, if there's latest version of resile-bundle is available -->
+            <!-- These 2 properties can be removed, if latest version of resile-bundle is available -->
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/resile-single-full.jar</systemPath>
 
