@@ -15,10 +15,10 @@
         <plummb.version>1.0.18</plummb.version>
     </properties>
     <scm>
-        <connection>scm:git:ssh://git@bitbucket.org/swattu/resilience-example.git</connection>
-        <developerConnection>scm:git:ssh://git@bitbucket.org/swattu/resilience-example.git</developerConnection>
-        <url>https://bitbucket.org/swattu/resilience-example</url>
-        <tag>v1.0.17</tag>
+        <connection>scm:git:ssh://git@github.com/plummb/resilience.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/plummb/resilience.git</developerConnection>
+        <url>https://github.com/plummb/resilience</url>
+        <tag>v1.0.0</tag>
     </scm>
     <licenses>
         <license>
