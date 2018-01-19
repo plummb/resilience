@@ -1,0 +1,17 @@
+<!--
+  ~ Copyright © 2018 Plummb Technologies. All rights reserved.
+  -->
+
+<configuration>
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="stdout">
+        <param value="System.out" name="Target"/>
+        <encoder>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %c:%m%n</Pattern>
+        </encoder>
+    </appender>
+    <logger name="com.plummb" level="INFO"/>
+    <logger name="plummb" level="INFO"/>
+    <root level="INFO">
+        <appender-ref ref="stdout"/>
+    </root>
+</configuration>
