@@ -24,7 +24,7 @@
 * IP is NOT tracked for this account.
   
 ## Pre-requisites ##
-* Java 8
+* Java 7+
 * Maven 3.3.9 or above
 
 ## How do I set it up? ##
