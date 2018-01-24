@@ -9,8 +9,7 @@ import com.plummb.resile.client.ResilienceClient;
 public class Setup {
   private static boolean initialized = false;
 
-  public static TheContext setup(String type) throws InterruptedException {
-    ResilienceClient.enable("1d968432-6eba-42b4-8903-05a7d0b48ed9", type);
+  public static TheContext initContext() throws InterruptedException {
     TheContext context = new TheContext();
     context.setSimulationEnabled(true);
     context.setResilienceEnabled(true);
@@ -18,7 +17,7 @@ public class Setup {
     context.setMorphEnabled(true);
     ResilienceClient.setContext(context);
     if (!initialized) {
-      Thread.sleep(20000);
+      Thread.sleep(40000);
     }
     initialized = true;
     return context;

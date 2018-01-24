@@ -4,7 +4,7 @@
 
 package com.plummb.example;
 
-import com.plummb.resile.client.ResilienceClient;
+import com.plummb.example.service.MorphService;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -20,9 +20,8 @@ public class MorphingTest {
    */
   @Test
   public void check() throws InterruptedException {
-    TheContext context = Setup.setup("Morph");
+    TheContext context = Setup.initContext();
     MorphService service = new MorphService();
-    service = ResilienceClient.intercept("Morph", service);
     try {
       context.setMorphEnabled(true);
       service.exception("Exception is thrown");

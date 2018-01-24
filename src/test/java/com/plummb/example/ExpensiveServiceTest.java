@@ -4,7 +4,7 @@
 
 package com.plummb.example;
 
-import com.plummb.resile.client.ResilienceClient;
+import com.plummb.example.service.ExpensiveService;
 import org.junit.Test;
 
 public class ExpensiveServiceTest {
@@ -16,9 +16,8 @@ public class ExpensiveServiceTest {
    */
   @Test
   public void check() throws InterruptedException {
-    Setup.setup("Expensive");
+    Setup.initContext();
     ExpensiveService service = new ExpensiveService();
-    service = ResilienceClient.intercept("ExpensiveService", service);
     service.delay(25);
     //The time taken will be emitted in the logs starting with ML (Method Logging)
 

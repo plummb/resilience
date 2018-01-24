@@ -4,7 +4,7 @@
 
 package com.plummb.example;
 
-import com.plummb.resile.client.ResilienceClient;
+import com.plummb.example.service.PlummbService;
 import org.junit.Test;
 
 public class SimulationTest {
@@ -17,10 +17,9 @@ public class SimulationTest {
   @Test(expected = RuntimeException.class)
   public void verify() throws InterruptedException {
     //This context can be used to enable/disable features
-    TheContext context = Setup.setup("Simulation");
+    TheContext context = Setup.initContext();
 
     PlummbService service = new PlummbService();
-    service = ResilienceClient.intercept("Hello", service);
 
     for (int x = 0; x < 20; x++) {
       Thread.sleep(1000);

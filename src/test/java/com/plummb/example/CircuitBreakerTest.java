@@ -4,7 +4,7 @@
 
 package com.plummb.example;
 
-import com.plummb.resile.client.ResilienceClient;
+import com.plummb.example.service.PlummbService;
 import org.junit.Test;
 
 import java.util.Objects;
@@ -24,10 +24,9 @@ public class CircuitBreakerTest {
   @Test
   public void verify() throws InterruptedException {
     //This context can be used to enable/disable features
-    TheContext context = Setup.setup("Resilience");
+    TheContext context = Setup.initContext();
 
     PlummbService service = new PlummbService();
-    service = ResilienceClient.intercept("Hello", service);
 
     long startTime = System.currentTimeMillis();
     boolean thrown = false;
