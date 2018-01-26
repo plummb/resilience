@@ -4,21 +4,35 @@
 * This demonstrates the power of Plummb. It also provides a way to play around with pre-configured rule.
 
 ## Features ##
-* SimulationTest 
-    * Delay Action
-    * Throw Exception Action
-* ResilienceTest
-    * Retry Action
-* CircuitBreakerTest
-    * Circuit Breaker Action
-        * Closed Circuit
-        * Open Circuit
-        * Half-Open Circuit
-* MorphingTest
-    * Morphing a sensitive Exception message
-* ExpensiveServiceTest
-    * Method Logging
-    * Pending Method Logging
+* During UAT, certain actions can be Simulated, thus enabling proper testing.
+    * Class - SimulationTest 
+        * Delay Action
+            * Introduce a delay in minutes before calling actual method.
+        * Throw Exception Action
+            * Throw a custom Exception before calling actual method.
+* Certain actions can be introduced when an Exception is thrown.
+    * Class - ResilienceTest
+        * Retry Action
+            * At times retrying a method succeeds when making a call network call.
+    * Class - CircuitBreakerTest
+        * Circuit Breaker Action
+            * Closed Circuit
+                * A call starts with a Closed Circuit
+            * Open Circuit
+                * When call failures cross an Open threshold, the circuit becomes Open. 
+                Means at this time, configured Exception is thrown without calling actual method.
+            * Half-Open Circuit
+                * When call failures cross a Half-Open threshold, the circuit becomes Half-Open.
+                Means only few percentage of times actual call is made, while an Exception is thrown for the rest. 
+* An exception message can be modified. Especially helpful when the original exception contains some sensitive information.
+    * Class - MorphingTest
+        * Morphing a sensitive Exception message
+* Logging the performance and depth of methods
+    * Class - ExpensiveServiceTest
+        * Method Logging
+            * Emit information if a method has taken at least X milliseconds.
+        * Pending Method Logging
+            * Emit information if a method has been pending for at least X milliseconds and still executing.
         
 ## IP Tracking ##
 * IP is NOT tracked for this account.
@@ -34,7 +48,14 @@
 * Login to www.plummb.com
 * Download appropriate Plummb tar from Help link
 * Follow the process to install Plummb Jar
-* Remove 2 lines from pom.xml
+* Remove 2 lines from pom.xml, as marked
+* ByteBuddy is used for Instrumentation. Uncomment the dependency information as marked.
+
+		<dependency>
+			<groupId>net.bytebuddy</groupId>
+			<artifactId>byte-buddy-dep</artifactId>
+			<version>1.7.9</version>
+		</dependency>
 
 ## Playing Around ##
 * TheContext is the object to play around. By default all are enabled.

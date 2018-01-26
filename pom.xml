@@ -38,6 +38,13 @@
             <systemPath>${project.basedir}/lib/resile-single-full.jar</systemPath>
 
         </dependency>
+        <!-- This dependency should be uncommented, if using latest verrsion of resile-bundle.
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy-dep</artifactId>
+            <version>1.7.9</version>
+        </dependency>
+        -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
