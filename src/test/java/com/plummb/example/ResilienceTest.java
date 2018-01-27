@@ -20,7 +20,6 @@ public class ResilienceTest {
     TheContext context = Setup.initContext();
 
     PlummbService service = new PlummbService();
-    Thread.sleep(1000);
     service.exceptionPercent75();
   }
 }
