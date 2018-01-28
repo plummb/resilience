@@ -59,8 +59,7 @@
 
 ## Running Test Case against my account
 * Sign In/Up at www.plummb.com
-* Update "Organization Info" as shown
-    <BR>
+* Update "Organization Info" as shown <BR>
     ![Organization Info](img/OrganizationInfo.jpg)
 * Create an "Access Key" as shown in img/accessKeys.jpg 
     * Update accessKey in src/main/resources/plummbAgent.properties
@@ -71,26 +70,18 @@
     * Exception : Info and Action <BR>
     ![Exception](img/ExceptionSimulationInfo.jpg) <BR>
     ![Exception](img/ExceptionSimulationAction.jpg)
-    * Delay : Info and Action
-    <BR>
-    ![Delay](img/DelaySimulationInfo.jpg)
-    <BR>
+    * Delay : Info and Action <BR>
+    ![Delay](img/DelaySimulationInfo.jpg) <BR>
     ![Delay](img/DelaySimulationAction.jpg)
 * Create "Resilience Rule" as below
-    * Retry : Info and Action
-    <BR>
-    ![Retry](img/RetryResilienceInfo.jpg)
-    <BR>
+    * Retry : Info and Action <BR>
+    ![Retry](img/RetryResilienceInfo.jpg) <BR>
     ![Retry](img/RetryResilienceAction.jpg)
-    * Circuit Breaker : Info and Action
-    <BR>
-    ![Circuit Breaker](img/CircuitBreakerResilienceInfo.jpg)
-    <BR>
+    * Circuit Breaker : Info and Action <BR>
+    ![Circuit Breaker](img/CircuitBreakerResilienceInfo.jpg) <BR>
     ![Circuit Breaker](img/CircuitBreakerResilienceAction.jpg)
-    * Morph : Info and Action
-    <BR>
-    ![Morph](img/MorphResilienceInfo.jpg)
-    <BR>
+    * Morph : Info and Action <BR>
+    ![Morph](img/MorphResilienceInfo.jpg) <BR>
     ![Morph](img/MorphResilienceAction.jpg)
 * Execute again mvn clean install
     * This time the test cases should succeed
