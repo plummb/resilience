@@ -68,10 +68,8 @@
     * This will fail presently.
     * This execution will help in filling the Drop Down for configuring Rules
 * Create "Simulation Rule" as below 
-    * Exception : Info and Action
-    <BR>
-    ![Exception](img/ExceptionSimulationInfo.jpg)
-    <BR>
+    * Exception : Info and Action <BR>
+    ![Exception](img/ExceptionSimulationInfo.jpg) <BR>
     ![Exception](img/ExceptionSimulationAction.jpg)
     * Delay : Info and Action
     <BR>
