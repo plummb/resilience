@@ -71,17 +71,17 @@
     ![Exception](img/ExceptionSimulationInfo.jpg)
     ![Exception](img/ExceptionSimulationAction.jpg)
     * Delay : Info and Action
-    ![Delay](img/DelaySimulationAction.jpg)
+    ![Delay](img/DelaySimulationInfo.jpg)
     ![Delay](img/DelaySimulationAction.jpg)
 * Create "Resilience Rule" as below
     * Retry : Info and Action
-    ![Retry](img/RetryResilienceRule.jpg)
+    ![Retry](img/RetryResilienceInfo.jpg)
     ![Retry](img/RetryResilienceAction.jpg)
     * Circuit Breaker : Info and Action
-    ![Circuit Breaker](img/CircuitBreakerResilienceRule.jpg)
+    ![Circuit Breaker](img/CircuitBreakerResilienceInfo.jpg)
     ![Circuit Breaker](img/CircuitBreakerResilienceAction.jpg)
     * Morph : Info and Action
-    ![Morph](img/MorphResilienceRule.jpg)
+    ![Morph](img/MorphResilienceInfo.jpg)
     ![Morph](img/MorphResilienceAction.jpg)
 * Execute again mvn clean install
     * This time the test cases should succeed
