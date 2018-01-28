@@ -59,19 +59,30 @@
 
 ## Running Test Case against my account
 * Sign In/Up at www.plummb.com
-* Update "Organization Info" as shown in img/OrganizationInfo.jpg
+* Update "Organization Info" as shown
+    ![Organization Info](img/OrganizationInfo.jpg)
 * Create an "Access Key" as shown in img/accessKeys.jpg 
     * Update accessKey in src/main/resources/plummbAgent.properties
 * Execute mvn clean install.
     * This will fail presently.
     * This execution will help in filling the Drop Down for configuring Rules
 * Create "Simulation Rule" as below 
-    * Exception : img/ExceptionSimulationRule.jpg and img/ExceptionSimulationAction.jpg
-    * Delay : img/DelaySimulationRule.jpg and img/DelaySimulationAction.jpg
+    * Exception : Info and Action
+    ![Exception](img/ExceptionSimulationInfo.jpg)
+    ![Exception](img/ExceptionSimulationAction.jpg)
+    * Delay : Info and Action
+    ![Delay](img/DelaySimulationAction.jpg)
+    ![Delay](img/DelaySimulationAction.jpg)
 * Create "Resilience Rule" as below
-    * Retry : img/RetryResilienceRule.jpg and img/RetryResilienceAction.jpg
-    * Circuit Breaker : img/CircuitBreakerResilienceRule.jpg and img/CircuitBreakerResilienceAction.jpg
-    * Morph : img/MorphResilienceRule.jpg and img/MorphResilienceAction.jpg
+    * Retry : Info and Action
+    ![Retry](img/RetryResilienceRule.jpg)
+    ![Retry](img/RetryResilienceAction.jpg)
+    * Circuit Breaker : Info and Action
+    ![Circuit Breaker](img/CircuitBreakerResilienceRule.jpg)
+    ![Circuit Breaker](img/CircuitBreakerResilienceAction.jpg)
+    * Morph : Info and Action
+    ![Morph](img/MorphResilienceRule.jpg)
+    ![Morph](img/MorphResilienceAction.jpg)
 * Execute again mvn clean install
     * This time the test cases should succeed
         
