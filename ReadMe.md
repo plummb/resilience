@@ -43,19 +43,13 @@
 
 ## How do I set it up? ##
 * The project contains a bundled Plummb Jar file.
+* Just clone the repository and execute mvn clean install
 
 ## Working with Latest Plummb Jar ##
 * Login to www.plummb.com
 * Download appropriate Plummb tar from Help link
 * Follow the process to install Plummb Jar
 * Remove 2 lines from pom.xml, as marked
-* ByteBuddy is used for Instrumentation. Uncomment the dependency information as marked.
-
-		<dependency>
-			<groupId>net.bytebuddy</groupId>
-			<artifactId>byte-buddy-dep</artifactId>
-			<version>1.7.9</version>
-		</dependency>
 
 ## Playing Around ##
 * TheContext is the object to play around. By default all are enabled.
@@ -63,5 +57,23 @@
     * Set resilienceEnabled flag to enable/disable Resilience Rule
     * Set circuitEnabled flag to enable/disable Circuit Breakers
 
+## Running Test Case against my account
+* Sign In/Up at www.plummb.com
+* Update "Organization Info" as shown in img/OrganizationInfo.jpg
+* Create an "Access Key" as shown in img/accessKeys.jpg 
+    * Update accessKey in src/main/resources/plummbAgent.properties
+* Execute mvn clean install.
+    * This will fail presently.
+    * This execution will help in filling the Drop Down for configuring Rules
+* Create "Simulation Rule" as below 
+    * Exception : img/ExceptionSimulationRule.jpg and img/ExceptionSimulationAction.jpg
+    * Delay : img/DelaySimulationRule.jpg and img/DelaySimulationAction.jpg
+* Create "Resilience Rule" as below
+    * Retry : img/RetryResilienceRule.jpg and img/RetryResilienceAction.jpg
+    * Circuit Breaker : img/CircuitBreakerResilienceRule.jpg and img/CircuitBreakerResilienceAction.jpg
+    * Morph : img/MorphResilienceRule.jpg and img/MorphResilienceAction.jpg
+* Execute again mvn clean install
+    * This time the test cases should succeed
+        
 ### Who do I talk to? ###
 * Repo owner : support@plummb.com
