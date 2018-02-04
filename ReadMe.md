@@ -1,7 +1,7 @@
 # README #
 
 ### What is this repository for? ###
-* This demonstrates the power of Plummb. It also provides a way to play around with pre-configured rule.
+* This demonstrates the power of Plummb. It also provides a way to play around with pre-configured rules.
 
 ## Features ##
 * During UAT, certain actions can be Simulated, thus enabling proper testing.
@@ -53,15 +53,16 @@
 
 ## Playing Around ##
 * TheContext is the object to play around. By default all are enabled.
-    * Set simulationEnabled flag to enable/disable Simulation Rule 
-    * Set resilienceEnabled flag to enable/disable Resilience Rule
+    * Set simulationEnabled flag to enable/disable Simulation Rules 
+    * Set resilienceEnabled flag to enable/disable Resilience Rules
     * Set circuitEnabled flag to enable/disable Circuit Breakers
+    * Set morphEnabled flag to enable/disable Morphing
 
 ## Running Test Case against my account
 * Sign In/Up at www.plummb.com
 * Update "Organization Info" as shown <BR>
     ![Organization Info](img/OrganizationInfo.jpg)
-* Create an "Access Key" as shown in img/accessKeys.jpg 
+* Click "Access Keys", an access key is already generated. 
     * Update accessKey in src/main/resources/plummbAgent.properties
 * Execute mvn clean install.
     * This will fail presently.
