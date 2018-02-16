@@ -8,11 +8,9 @@ import com.plummb.example.service.ExpensiveService;
 
 public class PerformanceTest {
   public void check() throws InterruptedException {
-    check(0);
-    check(1);
-    check(2);
-    check(5);
-    check(10);
+    for (int x = 0; x <= 10; x++) {
+      check(x);
+    }
   }
 
   private void check(int delay) throws InterruptedException {
