@@ -6,7 +6,7 @@
     <appender class="ch.qos.logback.core.ConsoleAppender" name="stdout">
         <param value="System.out" name="Target"/>
         <encoder>
-            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %c:%m%n</Pattern>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] [rId:%X{requestId}] %c:%m%n</Pattern>
         </encoder>
     </appender>
     <logger name="com.plummb" level="INFO"/>
