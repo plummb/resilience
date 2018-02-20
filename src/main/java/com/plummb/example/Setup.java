@@ -4,7 +4,6 @@
 
 package com.plummb.example;
 
-import com.plummb.resile.client.ResilienceClient;
 import org.slf4j.MDC;
 
 import java.util.UUID;
@@ -19,7 +18,7 @@ public class Setup {
     context.setResilienceEnabled(true);
     context.setCircuitEnabled(true);
     context.setMorphEnabled(true);
-    ResilienceClient.setContext(context);
+    TheContext.setContext(context);
     if (!initialized) {
       Thread.sleep(40000);
     }

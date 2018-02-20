@@ -9,11 +9,20 @@ package com.plummb.example;
  * One can set appropriate flag to enable/disable Simulation, Resilience or Circuit Breaker.
  */
 public class TheContext {
+  private static final ThreadLocal<TheContext> THREAD_LOCAL = new ThreadLocal<>();
   private String name;
   private boolean simulationEnabled;
   private boolean resilienceEnabled;
   private boolean circuitEnabled;
   private boolean morphEnabled;
+
+  public static TheContext getContext() {
+    return THREAD_LOCAL.get();
+  }
+
+  public static void setContext(TheContext theContext) {
+    THREAD_LOCAL.set(theContext);
+  }
 
   /**
    * Gets name.
