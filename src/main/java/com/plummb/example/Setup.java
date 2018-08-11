@@ -4,13 +4,12 @@
 
 package com.plummb.example;
 
+import com.plummb.resile.client.ResilienceClient;
 import org.slf4j.MDC;
 
 import java.util.UUID;
 
 public class Setup {
-  private static boolean initialized = false;
-
   public static TheContext initContext() throws InterruptedException {
     MDC.put("requestId", UUID.randomUUID().toString());
     TheContext context = new TheContext();
@@ -19,10 +18,10 @@ public class Setup {
     context.setCircuitEnabled(true);
     context.setMorphEnabled(true);
     TheContext.setContext(context);
-    if (!initialized) {
-      Thread.sleep(40000);
-    }
-    initialized = true;
+
+    //This call is not needed. This is just to save time during demo.
+    ResilienceClient.synchronizeIfNever();
+
     return context;
   }
 }
