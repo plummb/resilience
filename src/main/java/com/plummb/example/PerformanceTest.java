@@ -4,7 +4,7 @@
 
 package com.plummb.example;
 
-import com.plummb.example.service.ExpensiveService;
+import com.plummb.example.service.PerformanceService;
 
 public class PerformanceTest {
   public void check() throws InterruptedException {
@@ -14,13 +14,13 @@ public class PerformanceTest {
   }
 
   private void check(int delay) throws InterruptedException {
-    ExpensiveService service = new ExpensiveService();
+    PerformanceService service = new PerformanceService();
     //Warming up
     service.delay(1);
     int counter = 0;
     final int millis = 10 * 1000;
-    final long start = System.currentTimeMillis();
-    while (System.currentTimeMillis() < start + millis) {
+    final long endsAt = System.currentTimeMillis() + millis;
+    while (System.currentTimeMillis() < endsAt) {
       service.delay(delay);
       counter++;
     }

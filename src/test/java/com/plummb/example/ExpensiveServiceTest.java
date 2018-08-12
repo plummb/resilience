@@ -4,7 +4,7 @@
 
 package com.plummb.example;
 
-import com.plummb.example.service.ExpensiveService;
+import com.plummb.example.service.RestService;
 import org.junit.Test;
 
 public class ExpensiveServiceTest {
@@ -17,11 +17,12 @@ public class ExpensiveServiceTest {
   @Test
   public void check() throws InterruptedException {
     Setup.initContext();
-    ExpensiveService service = new ExpensiveService();
+    RestService service = new RestService();
     System.out.println("The time taken will be emitted in the logs starting with ML (Method Logging)");
-    service.delay(25);
+    service.methodTaking25Milis();
 
-    System.out.println("The time taken will be emitted in the logs starting with PML (Pending Method Logging). After 60 seconds, this will be emitted every ~10 seconds.");
-    service.delay(90000);
+    System.out.println("The time taken will be emitted in the logs starting with PML (Pending Method Logging).");
+    System.out.println("After 60 seconds, this will be emitted every ~10 seconds.");
+    service.methodTaking90Secs();
   }
 }
