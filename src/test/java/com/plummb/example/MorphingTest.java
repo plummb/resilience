@@ -20,7 +20,7 @@ public class MorphingTest {
    */
   @Test
   public void check() throws InterruptedException {
-    TheContext context = Setup.initContext();
+    ThreadLocalContext context = Setup.initContext();
     MorphService service = new MorphService();
     try {
       context.setMorphEnabled(true);

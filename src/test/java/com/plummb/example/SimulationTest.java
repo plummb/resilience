@@ -17,7 +17,7 @@ public class SimulationTest {
   @Test(expected = RuntimeException.class)
   public void verify() throws InterruptedException {
     //This context can be used to enable/disable features
-    TheContext context = Setup.initContext();
+    ThreadLocalContext context = Setup.initContext();
 
     PlummbService service = new PlummbService();
 

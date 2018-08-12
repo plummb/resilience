@@ -4,7 +4,7 @@
 
 package com.plummb.example;
 
-import com.plummb.example.service.PlummbService;
+import com.plummb.example.service.MongoDao;
 import org.junit.Test;
 
 public class ResilienceTest {
@@ -17,9 +17,9 @@ public class ResilienceTest {
   @Test
   public void verify() throws InterruptedException {
     //This context can be used to enable/disable features
-    TheContext context = Setup.initContext();
+    ThreadLocalContext context = Setup.initContext();
 
-    PlummbService service = new PlummbService();
-    service.exceptionPercent75();
+    MongoDao service = new MongoDao();
+    Person person = service.findOne("abc");
   }
 }

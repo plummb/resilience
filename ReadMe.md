@@ -57,9 +57,11 @@
     * Set resilienceEnabled flag to enable/disable Resilience Rules
     * Set circuitEnabled flag to enable/disable Circuit Breakers
     * Set morphEnabled flag to enable/disable Morphing
+    * All settings can be viewed using [Guest](http://www.plummb.com/resile/login/guest) login
 
 ## Running Test Case against my account
 * Sign In/Up at www.plummb.com
+* Disclaimer: Below images may be obsolete. Login as [Guest](http://www.plummb.com/resile/login/guest) for latest configurations.
 * Update "Organization Info" as shown <BR>
     ![Organization Info](img/OrganizationInfo.jpg)
 * Click "Access Keys", an access key is already generated. 

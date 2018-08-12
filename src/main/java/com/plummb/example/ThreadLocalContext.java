@@ -8,20 +8,20 @@ package com.plummb.example;
  * The context.
  * One can set appropriate flag to enable/disable Simulation, Resilience or Circuit Breaker.
  */
-public class TheContext {
-  private static final ThreadLocal<TheContext> THREAD_LOCAL = new ThreadLocal<>();
+public class ThreadLocalContext {
+  private static final ThreadLocal<ThreadLocalContext> THREAD_LOCAL = new ThreadLocal<>();
   private String name;
   private boolean simulationEnabled;
   private boolean resilienceEnabled;
   private boolean circuitEnabled;
   private boolean morphEnabled;
 
-  public static TheContext getContext() {
+  public static ThreadLocalContext getContext() {
     return THREAD_LOCAL.get();
   }
 
-  public static void setContext(TheContext theContext) {
-    THREAD_LOCAL.set(theContext);
+  public static void setContext(ThreadLocalContext threadLocalContext) {
+    THREAD_LOCAL.set(threadLocalContext);
   }
 
   /**
@@ -111,7 +111,7 @@ public class TheContext {
    * @param morphEnabled the morph enabled
    * @return the morph enabled
    */
-  public TheContext setMorphEnabled(boolean morphEnabled) {
+  public ThreadLocalContext setMorphEnabled(boolean morphEnabled) {
     this.morphEnabled = morphEnabled;
     return this;
   }

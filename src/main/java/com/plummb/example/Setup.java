@@ -10,14 +10,14 @@ import org.slf4j.MDC;
 import java.util.UUID;
 
 public class Setup {
-  public static TheContext initContext() throws InterruptedException {
+  public static ThreadLocalContext initContext() throws InterruptedException {
     MDC.put("requestId", UUID.randomUUID().toString());
-    TheContext context = new TheContext();
+    ThreadLocalContext context = new ThreadLocalContext();
     context.setSimulationEnabled(true);
     context.setResilienceEnabled(true);
     context.setCircuitEnabled(true);
     context.setMorphEnabled(true);
-    TheContext.setContext(context);
+    ThreadLocalContext.setContext(context);
 
     //This call is not needed. This is just to save time during demo.
     ResilienceClient.synchronizeIfNever();
