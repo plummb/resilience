@@ -4,10 +4,11 @@
 
 package com.plummb.example;
 
-import com.plummb.example.service.MorphService;
+import com.plummb.example.service.PostgresService;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class MorphingTest {
 
@@ -21,30 +22,21 @@ public class MorphingTest {
   @Test
   public void check() throws InterruptedException {
     ThreadLocalContext context = Setup.initContext();
-    MorphService service = new MorphService();
-    try {
-      context.setMorphEnabled(true);
-      service.exception("Exception is thrown");
-    } catch (Exception e) {
-      assertEquals("Exception is thrown", e.getMessage());
-      //This will emit "Exception is thrown"
-    }
-
+    PostgresService service = new PostgresService();
     try {
       context.setMorphEnabled(false);
-      service.exception("Password abc is incorrect");
+      service.getConnection();
     } catch (Exception e) {
-      assertEquals("Password abc is incorrect", e.getMessage());
+      assertTrue(e.getMessage(), e.getMessage().matches(".*Connection to .* refused.*"));
       //This will emit "Password abc is incorrect", as morphing is disabled
     }
 
     try {
       context.setMorphEnabled(true);
-      service.exception("Password abc is incorrect");
+      service.getConnection();
     } catch (Exception e) {
-      assertEquals("Check the credentials", e.getMessage());
+      assertEquals("Check the host/IP of the connection", e.getMessage());
       //This will emit "Check the credentials", as morphing is enabled
     }
-    Thread.sleep(20000);
   }
 }

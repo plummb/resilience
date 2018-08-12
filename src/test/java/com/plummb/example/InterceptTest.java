@@ -4,7 +4,7 @@
 
 package com.plummb.example;
 
-import com.plummb.example.service.MorphService;
+import com.plummb.example.service.PostgresService;
 import com.plummb.resile.client.ResilienceClient;
 import org.junit.Test;
 
@@ -20,8 +20,8 @@ public class InterceptTest {
    */
   @Test
   public void checkAlreadyIntercepted() throws InterruptedException {
-    MorphService service = new MorphService();
-    MorphService interceptedService = ResilienceClient.intercept("ReIntercept", service);
+    PostgresService service = new PostgresService();
+    PostgresService interceptedService = ResilienceClient.intercept("ReIntercept", service);
     assertSame(service, interceptedService);
   }
 
